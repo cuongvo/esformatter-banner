@@ -1,0 +1,26 @@
+{
+  "name": "esformatter-header",
+  "version": "0.0.1",
+  "description": "Adds a custom header as a comment block to the first line of a file",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha"
+  },
+  "keywords": [
+    "esformatter",
+    "plugin",
+    "header",
+    "copyright"
+  ],
+  "author": "Cuong Vo",
+  "license": "MIT",
+  "devDependencies": {
+    "esformatter": "^0.6.1",
+    "eslint": "^0.18.0",
+    "mocha": "^2.2.4"
+  },
+  "dependencies": {
+    "rocambole-linebreak": "^1.0.1",
+    "rocambole-token": "^1.2.1"
+  }
+}
