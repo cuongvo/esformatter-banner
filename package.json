@@ -19,7 +19,7 @@
     "eslint": "^0.18.0",
     "mocha": "^2.2.4"
   },
-  "dependencies": {
+  "peerDependencies": {
     "rocambole-linebreak": "^1.0.1",
     "rocambole-token": "^1.2.1"
   }

@@ -3,7 +3,7 @@ var plugin = require('./');
 var assert = require('assert');
 
 var settings = {
-    header: '* jQuery Release Note Generator '
+    banner: '* jQuery Release Note Generator '
 };
 var code = 'function foo() { console.log("hi"); }';
 

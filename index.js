@@ -1,35 +1,35 @@
 'use strict';
 
-var wrappedHeader;
+var wrappedBanner;
 var tk = require('rocambole-token');
 var br = require('rocambole-linebreak');
 
 exports.setOptions = function(opts) {
-  if (opts.header) {
-    wrappedHeader = '\n' + opts.header + '\n';
+  if (opts.banner) {
+    wrappedBanner = '\n' + opts.banner + '\n';
   }
 };
 
 exports.stringAfter = function(value) {
-  if (!wrappedHeader) {
+  if (!wrappedBanner) {
     return value;
   }
 
   var linebreak = '\n\n';
-  var headerBlockComment = '/*' + wrappedHeader + '*/';
+  var bannerBlockComment = '/*' + wrappedBanner + '*/';
 
-  return headerBlockComment + linebreak + value;
+  return bannerBlockComment + linebreak + value;
 };
 
 exports.tokenBefore = function(token) {
-  if (isHeaderComment(token)) {
+  if (isBannerComment(token)) {
     br.limitAfter(token, 0);
     tk.remove(token);
   }
 };
 
-function isHeaderComment(token) {
+function isBannerComment(token) {
   return (token.type === 'BlockComment'
           && token.prev === undefined
-          && token.value === wrappedHeader);
+          && token.value === wrappedBanner);
 }

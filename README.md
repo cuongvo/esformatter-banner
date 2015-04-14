@@ -1,2 +1,2 @@
-# esformatter-header
-Adds a comment block header to files
+# esformatter-banner-
+Adds a comment block, wrapping a banner to files.
